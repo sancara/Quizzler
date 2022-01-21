@@ -44,25 +44,34 @@ class ViewController: UIViewController {
         let actualQuestion = quiz[questionNumber]
         let actualAnswer = actualQuestion.answer // quiz[questionNumber].answer
         
-        if userAnswer ==  actualAnswer {
-            sender.backgroundColor = UIColor.green
-        } else {
-            sender.backgroundColor = UIColor.red
-        }
+        
         
         if questionNumber < quiz.count - 1 {
             questionNumber += 1
         } else {
             questionNumber = 0
         }
-        updateUI()
+        
+        if userAnswer ==  actualAnswer {
+            sender.backgroundColor = UIColor.green
+        } else {
+            sender.backgroundColor = UIColor.red
+        }
+        
+        let seconds = 0.3
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            // Put your code which should be executed with a delay here
+            self.updateUI()
+        }
+        
+        
         
     }
     
     func updateUI() {
         questionLabel.text = quiz[questionNumber].text
         trueButton.backgroundColor = UIColor.clear
-        falseButton.backgroundColor = UI
+        falseButton.backgroundColor = UIColor.clear
     }
     
 }
