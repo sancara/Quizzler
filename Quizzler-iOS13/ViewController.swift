@@ -45,9 +45,9 @@ class ViewController: UIViewController {
         let actualAnswer = actualQuestion.answer // quiz[questionNumber].answer
         
         if userAnswer ==  actualAnswer {
-            print("Right!")
+            sender.backgroundColor = UIColor.green
         } else {
-            print("Wrong!")
+            sender.backgroundColor = UIColor.red
         }
         
         if questionNumber < quiz.count - 1 {
@@ -61,6 +61,8 @@ class ViewController: UIViewController {
     
     func updateUI() {
         questionLabel.text = quiz[questionNumber].text
+        trueButton.backgroundColor = UIColor.clear
+        falseButton.backgroundColor = UI
     }
     
 }
