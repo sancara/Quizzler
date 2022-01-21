@@ -66,7 +66,7 @@ class ViewController: UIViewController {
             self.updateUI()
         }
         
-        progressBar.progress = Float(questionNumber)/Float(quiz.count)
+        progressBar.progress = Float(questionNumber + 1)/Float(quiz.count)
         
         
     }
