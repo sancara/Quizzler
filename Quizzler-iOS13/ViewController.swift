@@ -33,9 +33,11 @@ class ViewController: UIViewController {
     
     var questionNumber = 0
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        progressBar.progress = 0.0
         updateUI()
     }
 
@@ -58,12 +60,13 @@ class ViewController: UIViewController {
             sender.backgroundColor = UIColor.red
         }
         
-        let seconds = 0.3
+        let seconds = 0.2
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             // Put your code which should be executed with a delay here
             self.updateUI()
         }
         
+        progressBar.progress = Float(questionNumber)/Float(quiz.count)
         
         
     }
