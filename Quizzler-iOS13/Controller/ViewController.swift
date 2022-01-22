@@ -30,10 +30,10 @@ class ViewController: UIViewController {
         
         
         
-        if questionNumber < quiz.count - 1 {
-            questionNumber += 1
+        if quizBrain.questionNumber < quizBrain.quiz.count - 1 {
+            quizBrain.questionNumber += 1
         } else {
-            questionNumber = 0
+            quizBrain.questionNumber = 0
         }
         
         if userGotItWright {
@@ -48,15 +48,16 @@ class ViewController: UIViewController {
             self.updateUI()
         }
         
-        progressBar.progress = Float(questionNumber + 1)/Float(quiz.count)
+        
         
         
     }
     
     func updateUI() {
-        questionLabel.text = quiz[questionNumber].text
+        questionLabel.text = quizBrain.getQuestionText()
         trueButton.backgroundColor = UIColor.clear
         falseButton.backgroundColor = UIColor.clear
+        progressBar.progress = quizBrain.getProgress()
     }
     
 }
