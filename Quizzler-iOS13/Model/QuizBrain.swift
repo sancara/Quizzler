@@ -43,6 +43,14 @@ struct QuizBrain {
         return Float(questionNumber + 1) / Float(quiz.count)
     }
     
+    mutating func nextQuestion() {
+        if questionNumber < quiz.count - 1 {
+            self.questionNumber += 1
+        } else {
+            self.questionNumber = 0
+        }
+    }
+    
 
 
 }

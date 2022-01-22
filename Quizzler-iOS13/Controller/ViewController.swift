@@ -28,19 +28,14 @@ class ViewController: UIViewController {
         let userAnswer = sender.currentTitle!
         let userGotItWright = quizBrain.checkAnswer(userAnswer)
         
-        
-        
-        if quizBrain.questionNumber < quizBrain.quiz.count - 1 {
-            quizBrain.questionNumber += 1
-        } else {
-            quizBrain.questionNumber = 0
-        }
-        
+    
         if userGotItWright {
             sender.backgroundColor = UIColor.green
         } else {
             sender.backgroundColor = UIColor.red
         }
+        
+        quizBrain.nextQuestion()
         
         let seconds = 0.2
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
