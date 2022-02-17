@@ -171,7 +171,7 @@
         <!--View Controller-->
         <scene sceneID="BY0-Nz-mLD">
             <objects>
-                <viewController id="gp4-ds-bcq" sceneMemberID="viewController">
+                <viewController id="gp4-ds-bcq" customClass="ViewController" customModule="Quizzler_iOS13" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ae4-vY-aBO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -180,38 +180,75 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7Ji-fi-4Te">
-                                        <rect key="frame" x="0.0" y="668" width="414" height="132"/>
+                                        <rect key="frame" x="0.0" y="616" width="414" height="184"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNt-LB-UmX" userLabel="firstChoice">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="VyD-h4-9f3"/>
+                                                </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="firstChoice">
+                                                    <backgroundConfiguration key="background" image="Rectangle"/>
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="St0-88-AIi" userLabel="secondChoice">
-                                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                                <rect key="frame" x="0.0" y="60" width="414" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="gnk-Ah-zQB"/>
+                                                </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="secondChoice">
+                                                    <backgroundConfiguration key="background" image="Rectangle"/>
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="multipleAnswerChoice:" destination="gp4-ds-bcq" eventType="touchUpInside" id="Wtk-Et-K8j"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAB-XA-hF8" userLabel="thirdChoice">
-                                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                                <rect key="frame" x="0.0" y="120" width="414" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="Ggg-VZ-p3y"/>
+                                                </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="thirdChoice">
+                                                    <backgroundConfiguration key="background" image="Rectangle"/>
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                                 </buttonConfiguration>
                                             </button>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fvn-AB-aGa">
+                                                <rect key="frame" x="0.0" y="180" width="414" height="4"/>
+                                                <color key="progressTintColor" systemColor="systemPurpleColor"/>
+                                                <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </progressView>
                                         </subviews>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOH-uF-Wdn">
+                                        <rect key="frame" x="20" y="10" width="394" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEg-GJ-l2m">
+                                        <rect key="frame" x="118.5" y="403" width="177" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="lEg-GJ-l2m" firstAttribute="centerY" secondItem="Aqr-tB-tVD" secondAttribute="centerY" id="5oE-av-Trq"/>
                                     <constraint firstItem="7Ji-fi-4Te" firstAttribute="leading" secondItem="Aqr-tB-tVD" secondAttribute="leading" id="83S-ai-C5W"/>
+                                    <constraint firstItem="lEg-GJ-l2m" firstAttribute="centerX" secondItem="Aqr-tB-tVD" secondAttribute="centerX" id="F0U-1S-WYm"/>
+                                    <constraint firstItem="NOH-uF-Wdn" firstAttribute="leading" secondItem="Aqr-tB-tVD" secondAttribute="leading" constant="20" id="b3p-b9-a9E"/>
                                     <constraint firstAttribute="trailing" secondItem="7Ji-fi-4Te" secondAttribute="trailing" id="bEu-8E-DMB"/>
+                                    <constraint firstItem="NOH-uF-Wdn" firstAttribute="top" secondItem="Aqr-tB-tVD" secondAttribute="top" constant="10" id="cTV-GB-V9u"/>
+                                    <constraint firstAttribute="trailing" secondItem="NOH-uF-Wdn" secondAttribute="trailing" id="pxt-2n-SOt"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -225,6 +262,14 @@
                             <constraint firstItem="Aqr-tB-tVD" firstAttribute="trailing" secondItem="7X4-4y-Row" secondAttribute="trailing" id="yU7-Al-C2i"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstChoiceButton" destination="bNt-LB-UmX" id="dV2-EF-fd6"/>
+                        <outlet property="multipleChoiceProgressBar" destination="fvn-AB-aGa" id="Vmp-2t-R72"/>
+                        <outlet property="multipleChoiceQuestionLabel" destination="lEg-GJ-l2m" id="hIc-ya-7nz"/>
+                        <outlet property="multipleChoiceScoreLabel" destination="NOH-uF-Wdn" id="Yeg-PX-Afn"/>
+                        <outlet property="secondChoiceButton" destination="St0-88-AIi" id="bM2-cI-gvd"/>
+                        <outlet property="thirdChoiceButton" destination="aAB-XA-hF8" id="5ba-ZK-gC1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYp-qi-Esu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -236,6 +281,9 @@
         <image name="Rectangle" width="322" height="68"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
