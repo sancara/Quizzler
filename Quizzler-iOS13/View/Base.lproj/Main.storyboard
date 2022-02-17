@@ -193,6 +193,9 @@
                                                     <backgroundConfiguration key="background" image="Rectangle"/>
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="multipleAnswerChoice:" destination="gp4-ds-bcq" eventType="touchUpInside" id="bGM-EJ-eeY"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="St0-88-AIi" userLabel="secondChoice">
                                                 <rect key="frame" x="0.0" y="60" width="414" height="60"/>
@@ -220,6 +223,9 @@
                                                     <backgroundConfiguration key="background" image="Rectangle"/>
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="multipleAnswerChoice:" destination="gp4-ds-bcq" eventType="touchUpInside" id="FTN-1w-i7f"/>
+                                                </connections>
                                             </button>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fvn-AB-aGa">
                                                 <rect key="frame" x="0.0" y="180" width="414" height="4"/>
@@ -234,17 +240,16 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEg-GJ-l2m">
-                                        <rect key="frame" x="118.5" y="403" width="177" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEg-GJ-l2m">
+                                        <rect key="frame" x="30" y="386" width="354" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="lEg-GJ-l2m" firstAttribute="centerY" secondItem="Aqr-tB-tVD" secondAttribute="centerY" id="5oE-av-Trq"/>
                                     <constraint firstItem="7Ji-fi-4Te" firstAttribute="leading" secondItem="Aqr-tB-tVD" secondAttribute="leading" id="83S-ai-C5W"/>
-                                    <constraint firstItem="lEg-GJ-l2m" firstAttribute="centerX" secondItem="Aqr-tB-tVD" secondAttribute="centerX" id="F0U-1S-WYm"/>
+                                    <constraint firstItem="lEg-GJ-l2m" firstAttribute="leading" secondItem="Aqr-tB-tVD" secondAttribute="leading" constant="30" id="Vwc-MY-UMs"/>
                                     <constraint firstItem="NOH-uF-Wdn" firstAttribute="leading" secondItem="Aqr-tB-tVD" secondAttribute="leading" constant="20" id="b3p-b9-a9E"/>
                                     <constraint firstAttribute="trailing" secondItem="7Ji-fi-4Te" secondAttribute="trailing" id="bEu-8E-DMB"/>
                                     <constraint firstItem="NOH-uF-Wdn" firstAttribute="top" secondItem="Aqr-tB-tVD" secondAttribute="top" constant="10" id="cTV-GB-V9u"/>
@@ -255,6 +260,8 @@
                         <viewLayoutGuide key="safeArea" id="7X4-4y-Row"/>
                         <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="lEg-GJ-l2m" firstAttribute="centerX" secondItem="7X4-4y-Row" secondAttribute="centerX" id="Fu2-5J-5KN"/>
+                            <constraint firstItem="lEg-GJ-l2m" firstAttribute="centerY" secondItem="7X4-4y-Row" secondAttribute="centerY" id="YAo-nB-yng"/>
                             <constraint firstAttribute="bottom" secondItem="Aqr-tB-tVD" secondAttribute="bottom" id="gUE-OR-cXp"/>
                             <constraint firstItem="7X4-4y-Row" firstAttribute="bottom" secondItem="7Ji-fi-4Te" secondAttribute="bottom" constant="8" id="j4N-cg-WKs"/>
                             <constraint firstItem="Aqr-tB-tVD" firstAttribute="leading" secondItem="7X4-4y-Row" secondAttribute="leading" id="lM7-m3-zmn"/>

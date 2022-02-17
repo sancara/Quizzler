@@ -38,6 +38,10 @@ struct MultipleQuestionBrain {
         return multipleQuiz[questionNumber].text
     }
     
+    func getOptionText() -> [String] {
+        return multipleQuiz[questionNumber].answer
+    }
+    
     func getProgress() -> Float {
         return Float(questionNumber + 1) / Float(multipleQuiz.count)
     }

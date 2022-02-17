@@ -32,12 +32,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         //Multiple Choice
-//        multipleChoiceProgressBar.progress = 0.0
-//        updateMUI()
+        multipleChoiceProgressBar.progress = 0.0
+        updateMUI()
         
         //True or False
-        progressBar.progress = 0.0
-        updateUI()
+//        progressBar.progress = 0.0
+//        updateUI()
         
     }
 
@@ -99,6 +99,10 @@ class ViewController: UIViewController {
         multipleChoiceQuestionLabel.text = multipleQuiz.getQuestionText()
         multipleChoiceProgressBar.progress = multipleQuiz.getProgress()
         multipleChoiceScoreLabel.text = "Score: \(multipleQuiz.getScore())"
+        let buttonLabels = multipleQuiz.getOptionText()
+        firstChoiceButton.setTitle(buttonLabels[0], for: .normal)
+        secondChoiceButton.setTitle(buttonLabels[1], for: .normal)
+        thirdChoiceButton.setTitle(buttonLabels[2], for: .normal)
         firstChoiceButton.backgroundColor = UIColor.clear
         secondChoiceButton.backgroundColor = UIColor.clear
         thirdChoiceButton.backgroundColor = UIColor.clear
